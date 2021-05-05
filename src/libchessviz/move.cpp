@@ -1,8 +1,8 @@
 #include <iostream>
-#include <libchessviz/column.h>
-#include <libchessviz/line.h>
 #include <libchessviz/ERROR.h>
 #include <libchessviz/board.h>
+#include <libchessviz/column.h>
+#include <libchessviz/line.h>
 using namespace std;
 
 char move(char chessboard[11][11])
