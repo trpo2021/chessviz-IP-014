@@ -1,7 +1,7 @@
 APP_NAME = chessviz
 LIB_NAME = libchessviz
 
-CXX = g++
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
 LDFLAGS =
@@ -29,20 +29,18 @@ all: $(APP_PATH)
 
 -include $(DEPS)
 
-$(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
+$(APP_PATH): $(APP_OBJECTS) $(LIB_PATH) 
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
-$(LIB_PATH): $(LIB_OBJECTS)
+$(LIB_PATH): $(LIB_OBJECTS) 
 	ar rcs $@ $^
 
-$(OBJ_DIR)/%.o: %.$(SRC_EXT)
+$(OBJ_DIR)/%.o: %.cpp
 	$(CXX) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
-$(OBJ_DIR)/%.o: %.$(SRC_EXT)
 
 .PHONY: clean
 clean:
-	$(RM) $(APP_PATH) $(LIB_PATH) $(APP_PATH_TEST)
+	$(RM) $(BIN_DIR)/$(APP_NAME) 
 	find $(OBJ_DIR) -name '*.o' -exec $(RM) '{}' \;
 	find $(OBJ_DIR) -name '*.d' -exec $(RM) '{}' \;
-	$(CXX) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
