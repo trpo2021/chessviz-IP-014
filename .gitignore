@@ -1,5 +1,4 @@
+*.a
+*.d
 *.o
-.main.cpp.swp
-.main.cpp~
-#main.cpp#
-main
+bin/chessviz
