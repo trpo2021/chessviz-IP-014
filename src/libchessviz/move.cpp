@@ -3,7 +3,6 @@
 #include <libchessviz/line.h>
 #include <libchessviz/ERROR.h>
 #include <libchessviz/board.h>
-#include <stdio.h>
 using namespace std;
 
 char move(char chessboard[11][11])

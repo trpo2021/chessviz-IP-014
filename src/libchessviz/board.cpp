@@ -1,6 +1,5 @@
 #include <iostream>
 #include <libchessviz/board.h>
-#include <stdio.h>
 using namespace std;
 
 void board(char chessboard[11][11])
